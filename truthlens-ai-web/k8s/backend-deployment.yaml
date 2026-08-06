@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: backend
-          image: maniyar123/truthlens-backend:latest
+          image: esha0ay/truthlens-backend:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 5000

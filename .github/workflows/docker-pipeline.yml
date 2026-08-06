@@ -69,7 +69,7 @@ jobs:
           context: ./truthlens-ai-web/backend
           file: ./truthlens-ai-web/backend/Dockerfile
           push: ${{ steps.check_creds.outputs.has_creds == 'true' }}
-          tags: maniyar123/truthlens-backend:latest
+          tags: esha0ay/truthlens-backend:latest
 
       - name: Job 7 & 10 - Build and Push Frontend Docker Image
         uses: docker/build-push-action@v5
@@ -77,4 +77,4 @@ jobs:
           context: ./truthlens-ai-web/frontend
           file: ./truthlens-ai-web/frontend/Dockerfile
           push: ${{ steps.check_creds.outputs.has_creds == 'true' }}
-          tags: maniyar123/truthlens-frontend:latest
+          tags: esha0ay/truthlens-frontend:latest

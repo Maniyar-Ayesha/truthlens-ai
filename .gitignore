@@ -1,6 +1,13 @@
-# Node modules
+# Node modules & dependencies
 node_modules/
 **/node_modules/
+
+# Python Virtual Environments & Bytecode
+venv/
+**/venv/
+__pycache__/
+**/__pycache__/
+*.pyc
 
 # Build and dist outputs
 build/

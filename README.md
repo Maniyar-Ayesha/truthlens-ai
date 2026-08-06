@@ -24,7 +24,7 @@ An enterprise multi-platform artificial intelligence system designed for detecti
 
 ### DevOps & Infrastructure
 - **Containerization**: Docker, Docker Compose
-- **Container Registry**: Docker Hub (`maniyar123/truthlens-backend`, `maniyar123/truthlens-frontend`)
+- **Container Registry**: Docker Hub (`esha0ay/truthlens-backend`, `esha0ay/truthlens-frontend`)
 - **CI/CD Pipeline**: GitHub Actions (`.github/workflows/docker-pipeline.yml`)
 - **Orchestration**: Kubernetes Manifests (`k8s/`)
 

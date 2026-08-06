@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: maniyar123/truthlens-frontend:latest
+          image: esha0ay/truthlens-frontend:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 80

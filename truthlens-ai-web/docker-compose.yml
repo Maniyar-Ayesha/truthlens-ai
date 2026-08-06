@@ -5,7 +5,7 @@ services:
     build:
       context: ./backend
       dockerfile: Dockerfile
-    image: maniyar123/truthlens-backend:latest
+    image: esha0ay/truthlens-backend:latest
     ports:
       - "5000:5000"
     environment:
@@ -17,7 +17,7 @@ services:
     build:
       context: ./frontend
       dockerfile: Dockerfile
-    image: maniyar123/truthlens-frontend:latest
+    image: esha0ay/truthlens-frontend:latest
     ports:
       - "80:80"
     depends_on:
