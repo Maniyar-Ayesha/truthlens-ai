@@ -18,7 +18,7 @@ jobs:
       - name: Job 2 - Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
 
       - name: Job 3 - Install Backend Dependencies
         working-directory: truthlens-ai-web/backend
@@ -46,7 +46,18 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
+      - name: Check Docker Hub Credentials Availability
+        id: check_creds
+        run: |
+          if [ -n "${{ secrets.DOCKER_USERNAME }}" ] && [ -n "${{ secrets.DOCKER_PASSWORD }}" ]; then
+            echo "has_creds=true" >> $GITHUB_OUTPUT
+          else
+            echo "has_creds=false" >> $GITHUB_OUTPUT
+            echo "::notice::DOCKER_USERNAME / DOCKER_PASSWORD secrets not set in GitHub repository settings. Building Docker images without pushing."
+          fi
+
       - name: Job 8 - Login to Docker Hub
+        if: steps.check_creds.outputs.has_creds == 'true'
         uses: docker/login-action@v3
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
@@ -57,7 +68,7 @@ jobs:
         with:
           context: ./truthlens-ai-web/backend
           file: ./truthlens-ai-web/backend/Dockerfile
-          push: true
+          push: ${{ steps.check_creds.outputs.has_creds == 'true' }}
           tags: maniyar123/truthlens-backend:latest
 
       - name: Job 7 & 10 - Build and Push Frontend Docker Image
@@ -65,5 +76,5 @@ jobs:
         with:
           context: ./truthlens-ai-web/frontend
           file: ./truthlens-ai-web/frontend/Dockerfile
-          push: true
+          push: ${{ steps.check_creds.outputs.has_creds == 'true' }}
           tags: maniyar123/truthlens-frontend:latest
