@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  truthlens-image-ai:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: esha0ay/truthlens-image-ai:latest
+    container_name: truthlens_image_ai
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./models:/app/models
+      - ./results:/app/results
+    environment:
+      - PORT=8000
+    restart: always
