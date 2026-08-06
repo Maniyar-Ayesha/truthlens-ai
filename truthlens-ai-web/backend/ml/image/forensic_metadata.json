@@ -1,0 +1,20 @@
+{
+  "model_type": "Voting(LR+RF+GB)",
+  "features": [
+    "ela_score",
+    "noise_level",
+    "noise_uniformity",
+    "has_exif",
+    "width_norm",
+    "height_norm",
+    "compression_artifact",
+    "edge_inconsistency"
+  ],
+  "classes": {
+    "0": "FAKE",
+    "1": "REAL"
+  },
+  "cv_accuracy_mean": 1.0,
+  "cv_accuracy_std": 0.0,
+  "samples": 1600
+}

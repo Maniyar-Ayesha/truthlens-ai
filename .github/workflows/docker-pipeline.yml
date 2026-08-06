@@ -1,0 +1,69 @@
+name: TruthLens AI - CI/CD & Docker Pipeline
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+    name: Build Dependencies & Test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Job 1 - Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Job 2 - Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Job 3 - Install Backend Dependencies
+        working-directory: truthlens-ai-web/backend
+        run: npm install --legacy-peer-deps
+
+      - name: Job 4 - Install Frontend Dependencies
+        working-directory: truthlens-ai-web/frontend
+        run: npm install --legacy-peer-deps
+
+      - name: Job 5 - Install Mobile Dependencies & Check Expo
+        working-directory: truthlens-ai-mobile
+        run: |
+          npm install --legacy-peer-deps
+          npx expo doctor || true
+
+  docker-build-and-push:
+    name: Build & Push Docker Images to Docker Hub
+    needs: build-and-test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Job 1 - Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Job 8 - Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Job 6 & 9 - Build and Push Backend Docker Image
+        uses: docker/build-push-action@v5
+        with:
+          context: ./truthlens-ai-web/backend
+          file: ./truthlens-ai-web/backend/Dockerfile
+          push: true
+          tags: maniyar123/truthlens-backend:latest
+
+      - name: Job 7 & 10 - Build and Push Frontend Docker Image
+        uses: docker/build-push-action@v5
+        with:
+          context: ./truthlens-ai-web/frontend
+          file: ./truthlens-ai-web/frontend/Dockerfile
+          push: true
+          tags: maniyar123/truthlens-frontend:latest

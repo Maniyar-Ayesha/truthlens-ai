@@ -1,0 +1,11 @@
+{
+  "timestamp": "2026-07-30T08:42:32.890460",
+  "status": "trained",
+  "architecture": "resnet18_binary",
+  "method": "real_faces_vs_manipulated_copies",
+  "final_val_accuracy": 1.0,
+  "labels": {
+    "0": "FAKE",
+    "1": "REAL"
+  }
+}

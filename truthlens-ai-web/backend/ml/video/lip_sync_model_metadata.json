@@ -1,0 +1,5 @@
+{
+  "status": "trained",
+  "architecture": "LipSyncDLModel",
+  "final_val_accuracy": 0.8933
+}

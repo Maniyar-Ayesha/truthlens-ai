@@ -1,0 +1,28 @@
+# Node modules
+node_modules/
+**/node_modules/
+
+# Build and dist outputs
+build/
+dist/
+**/build/
+**/dist/
+
+# Mobile / Expo & Android caches
+.expo/
+.gradle/
+**/android/.gradle/
+**/android/app/build/
+
+# IDE & OS metadata
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Log files
+*.log
+**/*.log
+
+# Temporary Excel lock files
+~$*.xlsx

@@ -1,0 +1,17 @@
+.footer{
+  width:100%;
+  padding:20px;
+  text-align:center;
+  background:white;
+  margin-top:40px;
+  box-shadow:0px -2px 10px rgba(0,0,0,0.05);
+}
+
+.footer p{
+  color:#6d28d9;
+  font-weight:bold;
+}
+
+.footer span{
+  color:#666;
+}

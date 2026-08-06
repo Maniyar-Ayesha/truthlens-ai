@@ -1,0 +1,42 @@
+.navbar {
+  width: 100%;
+  padding: 15px 40px;
+  background: white;
+  box-shadow: 0px 3px 12px rgba(0,0,0,0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.navbar h2 {
+  color: #6d28d9;
+  cursor: pointer;
+}
+
+.nav-links {
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links span {
+  cursor: pointer;
+  color: #333;
+  font-weight: 500;
+}
+
+.nav-links span:hover {
+  color: #6d28d9;
+}
+
+@media(max-width:768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

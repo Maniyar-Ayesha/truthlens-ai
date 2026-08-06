@@ -1,0 +1,11 @@
+opencv-python-headless
+torch
+torchvision
+transformers
+pillow
+numpy
+scikit-learn
+pandas
+scipy
+joblib
+sentence-transformers

@@ -1,0 +1,68 @@
+.result-container{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:#f4f7fb;
+}
+
+.result-card{
+  background:white;
+  padding:40px;
+  width:400px;
+  border-radius:20px;
+  text-align:center;
+  box-shadow:0px 4px 20px rgba(0,0,0,0.1);
+}
+
+.result-card h1{
+  color:#6d28d9;
+}
+
+.result-card h2{
+  font-size:50px;
+  margin-top:20px;
+}
+
+.status{
+  font-size:22px;
+  font-weight:bold;
+  margin-top:10px;
+}
+
+.progress-bar{
+  width:100%;
+  height:12px;
+  background:#ddd;
+  border-radius:10px;
+  margin-top:20px;
+}
+
+.progress{
+  height:100%;
+  background:#6d28d9;
+  border-radius:10px;
+}
+
+.reason{
+  margin-top:20px;
+  color:#555;
+}
+
+.result-card button{
+  margin-top:25px;
+  padding:12px 20px;
+  border:none;
+  border-radius:10px;
+  background:#6d28d9;
+  color:white;
+  cursor:pointer;
+}
+
+button{
+  transition:0.3s;
+}
+
+button:hover{
+  transform:scale(1.03);
+}

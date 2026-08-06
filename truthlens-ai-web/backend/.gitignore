@@ -1,0 +1,11 @@
+node_modules
+.env
+uploads/
+reports/
+ml/*.pkl
+ai/*.pkl
+Dataset/
+*.csv
+*.log
+.DS_Store
+Thumbs.db

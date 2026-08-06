@@ -1,0 +1,5 @@
+{
+  "status": "trained",
+  "architecture": "TemporalLSTM(12,64,2)",
+  "final_val_accuracy": 1.0
+}

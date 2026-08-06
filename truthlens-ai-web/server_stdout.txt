@@ -1,0 +1,8 @@
+◇ injected env (19) from .env // tip: ⌘ multiple files { path: ['.env.local', '.env'] }
+[2026-07-29T04:56:49.516Z] [INFO] [Server] TruthLens AI backend running on port 5000
+[2026-07-29T04:56:49.539Z] [INFO] [Server] Environment: development
+[2026-07-29T04:56:49.638Z] [INFO] [Server] MongoDB connected
+[2026-07-29T06:27:44.598Z] [INFO] [Server] POST /api/auth/google-login
+[2026-07-29T06:28:11.410Z] [INFO] [Server] POST /api/auth/google-login
+Google login error: connect ECONNREFUSED 127.0.0.1:27017
+Google login error: connect ECONNREFUSED 127.0.0.1:27017
